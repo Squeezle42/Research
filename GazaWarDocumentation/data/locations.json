@@ -1,0 +1,311 @@
+{
+  "locations": {
+    "title": "Gaza War Geographic Data",
+    "description": "Geographic markers, boundaries, and significant locations in the Gaza conflict",
+    "regions": [
+      {
+        "id": "gaza-strip",
+        "name": "Gaza Strip",
+        "type": "territory",
+        "coordinates": [31.4, 34.4],
+        "bounds": {
+          "north": 31.59,
+          "south": 31.22,
+          "east": 34.57,
+          "west": 34.22
+        },
+        "area": "365 km²",
+        "population": {
+          "total": 2300000,
+          "density": "6301/km²"
+        },
+        "description": "Palestinian territory along the Mediterranean coast",
+        "significance": "Primary area of conflict",
+        "status": "disputed_territory"
+      },
+      {
+        "id": "west-bank",
+        "name": "West Bank",
+        "type": "territory",
+        "coordinates": [31.9, 35.2],
+        "bounds": {
+          "north": 32.55,
+          "south": 31.35,
+          "east": 35.57,
+          "west": 34.88
+        },
+        "area": "5655 km²",
+        "population": {
+          "total": 3000000,
+          "density": "531/km²"
+        },
+        "description": "Palestinian territory in the Jordan River area",
+        "significance": "Secondary area affected by conflict",
+        "status": "disputed_territory"
+      }
+    ],
+    "cities": [
+      {
+        "id": "gaza-city",
+        "name": "Gaza City",
+        "coordinates": [31.5, 34.46],
+        "population": 700000,
+        "region": "gaza-strip",
+        "type": "major_city",
+        "significance": "Capital and largest city of Gaza Strip",
+        "status": "heavily_damaged",
+        "infrastructure": {
+          "hospitals": 12,
+          "schools": 280,
+          "mosques": 200,
+          "government_buildings": 15
+        },
+        "damage_assessment": {
+          "residential": "severe",
+          "commercial": "severe",
+          "infrastructure": "critical",
+          "hospitals": "partially_functional"
+        }
+      },
+      {
+        "id": "khan-younis",
+        "name": "Khan Younis",
+        "coordinates": [31.34, 34.3],
+        "population": 400000,
+        "region": "gaza-strip",
+        "type": "major_city",
+        "significance": "Second largest city in Gaza",
+        "status": "heavily_damaged",
+        "infrastructure": {
+          "hospitals": 8,
+          "schools": 150,
+          "mosques": 100
+        },
+        "damage_assessment": {
+          "residential": "severe",
+          "commercial": "moderate",
+          "infrastructure": "severe"
+        }
+      },
+      {
+        "id": "rafah",
+        "name": "Rafah",
+        "coordinates": [31.3, 34.24],
+        "population": 250000,
+        "region": "gaza-strip",
+        "type": "border_city",
+        "significance": "Border crossing with Egypt",
+        "status": "damaged",
+        "infrastructure": {
+          "border_crossing": 1,
+          "hospitals": 3,
+          "schools": 50
+        },
+        "strategic_importance": "Only crossing point between Gaza and Egypt"
+      },
+      {
+        "id": "jabalia",
+        "name": "Jabalia",
+        "coordinates": [31.53, 34.48],
+        "population": 200000,
+        "region": "gaza-strip",
+        "type": "refugee_camp",
+        "significance": "Largest refugee camp in Gaza",
+        "status": "severely_damaged",
+        "established": "1948",
+        "camp_type": "UNRWA refugee camp"
+      }
+    ],
+    "military_sites": [
+      {
+        "id": "israeli-gaza-border",
+        "name": "Gaza-Israel Border",
+        "type": "border",
+        "coordinates": [31.28, 34.25],
+        "length": "51 km",
+        "fortifications": {
+          "fence": "security barrier",
+          "sensors": "electronic surveillance",
+          "tunnels_discovered": 500
+        },
+        "significance": "Primary conflict zone"
+      },
+      {
+        "id": "gaza-egypt-border",
+        "name": "Gaza-Egypt Border (Philadelphi Corridor)",
+        "type": "border",
+        "coordinates": [31.25, 34.25],
+        "length": "14 km",
+        "controlled_by": "israel_egypt",
+        "significance": "Smuggling route prevention"
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "gaza-port",
+        "name": "Gaza Port",
+        "type": "port",
+        "coordinates": [31.51, 34.46],
+        "status": "non_operational",
+        "capacity": "fishing_boats_only",
+        "significance": "Main sea access point"
+      },
+      {
+        "id": "gaza-power-plant",
+        "name": "Gaza Power Plant",
+        "type": "power_station",
+        "coordinates": [31.45, 34.42],
+        "status": "damaged",
+        "capacity": "140 MW",
+        "fuel_supply": "blocked",
+        "significance": "Primary electricity source"
+      },
+      {
+        "id": "shifa-hospital",
+        "name": "Al-Shifa Hospital",
+        "type": "hospital",
+        "coordinates": [31.503, 34.464],
+        "status": "damaged",
+        "capacity": "700 beds",
+        "significance": "Largest hospital in Gaza",
+        "controversy": "Alleged military use by Hamas (disputed)"
+      },
+      {
+        "id": "al-ahli-hospital",
+        "name": "Al-Ahli Arab Hospital",
+        "type": "hospital",
+        "coordinates": [31.503, 34.464],
+        "status": "damaged",
+        "incident": "2023-10-17 explosion",
+        "significance": "Site of controversial explosion"
+      }
+    ],
+    "refugee_camps": [
+      {
+        "id": "jabalia-camp",
+        "name": "Jabalia Camp",
+        "coordinates": [31.53, 34.48],
+        "population": 116000,
+        "area": "1.4 km²",
+        "established": "1948",
+        "status": "severely_damaged",
+        "refugees": "1948 war refugees and descendants"
+      },
+      {
+        "id": "beach-camp",
+        "name": "Shati (Beach) Camp",
+        "coordinates": [31.52, 34.45],
+        "population": 87000,
+        "area": "0.52 km²",
+        "established": "1948",
+        "status": "damaged"
+      },
+      {
+        "id": "bureij-camp",
+        "name": "Al-Bureij Camp",
+        "coordinates": [31.42, 34.4],
+        "population": 46000,
+        "area": "0.53 km²",
+        "established": "1949",
+        "status": "damaged"
+      }
+    ],
+    "crossing_points": [
+      {
+        "id": "rafah-crossing",
+        "name": "Rafah Crossing",
+        "coordinates": [31.28, 34.25],
+        "connects": ["gaza", "egypt"],
+        "type": "passenger_crossing",
+        "status": "intermittently_open",
+        "controlled_by": "egypt",
+        "significance": "Only non-Israeli controlled crossing"
+      },
+      {
+        "id": "erez-crossing",
+        "name": "Erez Crossing",
+        "coordinates": [31.57, 34.52],
+        "connects": ["gaza", "israel"],
+        "type": "passenger_crossing",
+        "status": "closed",
+        "controlled_by": "israel"
+      },
+      {
+        "id": "kerem-shalom",
+        "name": "Kerem Shalom Crossing",
+        "coordinates": [31.23, 34.26],
+        "connects": ["gaza", "israel"],
+        "type": "goods_crossing",
+        "status": "limited_operations",
+        "controlled_by": "israel",
+        "significance": "Primary goods entry point"
+      }
+    ],
+    "damage_zones": [
+      {
+        "id": "north-gaza-heavy",
+        "name": "Northern Gaza Heavy Damage Zone",
+        "type": "damage_assessment",
+        "coordinates": [31.53, 34.48],
+        "radius": "5 km",
+        "damage_level": "severe",
+        "affected_areas": ["jabalia", "beit_hanoun", "beit_lahiya"],
+        "estimated_destruction": "70%"
+      },
+      {
+        "id": "gaza-city-center",
+        "name": "Gaza City Center Damage Zone",
+        "type": "damage_assessment",
+        "coordinates": [31.5, 34.46],
+        "radius": "3 km",
+        "damage_level": "heavy",
+        "affected_areas": ["rimal", "tal_al_hawa", "sheikh_ijlin"],
+        "estimated_destruction": "60%"
+      },
+      {
+        "id": "khan-younis-damage",
+        "name": "Khan Younis Damage Zone",
+        "type": "damage_assessment",
+        "coordinates": [31.34, 34.3],
+        "radius": "4 km",
+        "damage_level": "heavy",
+        "estimated_destruction": "55%"
+      }
+    ],
+    "evacuation_zones": [
+      {
+        "id": "safe-zone-al-mawasi",
+        "name": "Al-Mawasi Safe Zone",
+        "coordinates": [31.32, 34.27],
+        "type": "designated_safe_zone",
+        "area": "8.5 km²",
+        "capacity": "1.5 million people",
+        "conditions": "overcrowded, limited services",
+        "designated_by": "israeli_military"
+      }
+    ],
+    "statistics": {
+      "total_locations": 35,
+      "major_cities": 4,
+      "refugee_camps": 8,
+      "hospitals": 36,
+      "schools": 600,
+      "damage_assessment": {
+        "buildings_destroyed": 100000,
+        "buildings_damaged": 290000,
+        "infrastructure_damage": "critical"
+      }
+    },
+    "metadata": {
+      "coordinate_system": "WGS84",
+      "last_updated": "2024-01-20",
+      "data_sources": [
+        "UNRWA",
+        "OCHA",
+        "Palestinian Central Bureau of Statistics",
+        "Satellite imagery analysis"
+      ],
+      "accuracy": "Coordinates approximate, damage assessments based on available reports"
+    }
+  }
+}

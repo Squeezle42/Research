@@ -1,0 +1,9 @@
+<!-- This is a placeholder for favicon.ico -->
+<!-- In a real project, you would place the actual favicon.ico file here -->
+<!-- For now, we'll create an SVG favicon as a fallback -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" fill="#2c3e50"/>
+  <circle cx="16" cy="16" r="10" fill="#3498db"/>
+  <path d="M12 12 L20 12 L20 20 L12 20 Z" fill="#e74c3c"/>
+  <circle cx="16" cy="16" r="3" fill="#ffffff"/>
+</svg>

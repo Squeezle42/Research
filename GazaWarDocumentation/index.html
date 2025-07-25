@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive documentation of the Gaza conflict with interactive maps, timelines, satellite imagery, and credible news sources">
+    <meta name="keywords" content="Gaza, conflict, documentation, timeline, satellite imagery, news, humanitarian">
+    <meta name="author" content="Gaza War Documentation Project">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Gaza War Documentation">
+    <meta property="og:description" content="Interactive documentation of the Gaza conflict with maps, timelines, and satellite imagery">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gaza-documentation.org">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gaza War Documentation">
+    <meta name="twitter:description" content="Interactive documentation of the Gaza conflict">
+    
+    <title>Gaza War Documentation - Interactive Timeline and Analysis</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="src/styles/main.css" as="style">
+    <link rel="preload" href="src/main.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/styles/main.css">
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation Header -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <h1 class="nav__title">Gaza War Documentation</h1>
+                    <span class="nav__subtitle">Interactive Analysis & Timeline</span>
+                </div>
+                
+                <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                    <span class="nav__toggle-icon"></span>
+                </button>
+                
+                <ul class="nav__menu" id="nav-menu" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="#overview" class="nav__link" role="menuitem">Overview</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#timeline" class="nav__link" role="menuitem">Timeline</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#maps" class="nav__link" role="menuitem">Interactive Maps</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#satellite" class="nav__link" role="menuitem">Satellite Imagery</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#news" class="nav__link" role="menuitem">News Sources</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#geneva" class="nav__link" role="menuitem">Geneva Conventions</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#sources" class="nav__link" role="menuitem">Sources</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <!-- Loading Indicator -->
+        <div class="loading" id="loading-indicator" aria-live="polite">
+            <div class="loading__spinner"></div>
+            <p class="loading__text">Loading documentation...</p>
+        </div>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section section--overview" aria-labelledby="overview-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="overview-title" class="section__title">Conflict Overview</h2>
+                    <p class="section__subtitle">Understanding the Gaza conflict through data, imagery, and credible reporting</p>
+                </header>
+                
+                <div class="overview__grid">
+                    <div class="overview__card">
+                        <h3 class="overview__card-title">Current Status</h3>
+                        <div class="overview__stats" id="current-stats">
+                            <!-- Dynamic content loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="overview__card">
+                        <h3 class="overview__card-title">Key Facts</h3>
+                        <ul class="overview__facts" id="key-facts">
+                            <!-- Dynamic content loaded here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="overview__card">
+                        <h3 class="overview__card-title">Humanitarian Impact</h3>
+                        <div class="overview__humanitarian" id="humanitarian-data">
+                            <!-- Dynamic content loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Timeline Section -->
+        <section id="timeline" class="section section--timeline" aria-labelledby="timeline-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="timeline-title" class="section__title">Interactive Timeline</h2>
+                    <p class="section__subtitle">Navigate through key events and developments</p>
+                </header>
+                
+                <div class="timeline__controls">
+                    <button class="timeline__control" id="timeline-play" aria-label="Play timeline animation">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="timeline__control" id="timeline-pause" aria-label="Pause timeline animation">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <input type="range" class="timeline__slider" id="timeline-slider" 
+                           min="0" max="100" value="0" 
+                           aria-label="Timeline position">
+                    <div class="timeline__date" id="timeline-date"></div>
+                </div>
+                
+                <div class="timeline__container" id="timeline-container" role="application" aria-label="Interactive timeline">
+                    <!-- Timeline content dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Maps Section -->
+        <section id="maps" class="section section--maps" aria-labelledby="maps-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="maps-title" class="section__title">Interactive Maps</h2>
+                    <p class="section__subtitle">Geographic analysis and location data</p>
+                </header>
+                
+                <div class="maps__controls">
+                    <div class="maps__layers">
+                        <h3 class="maps__control-title">Map Layers</h3>
+                        <label class="maps__checkbox">
+                            <input type="checkbox" id="layer-events" checked>
+                            <span class="maps__checkbox-text">Key Events</span>
+                        </label>
+                        <label class="maps__checkbox">
+                            <input type="checkbox" id="layer-infrastructure">
+                            <span class="maps__checkbox-text">Infrastructure</span>
+                        </label>
+                        <label class="maps__checkbox">
+                            <input type="checkbox" id="layer-humanitarian">
+                            <span class="maps__checkbox-text">Humanitarian Sites</span>
+                        </label>
+                        <label class="maps__checkbox">
+                            <input type="checkbox" id="layer-borders">
+                            <span class="maps__checkbox-text">Borders</span>
+                        </label>
+                    </div>
+                    
+                    <div class="maps__filters">
+                        <h3 class="maps__control-title">Time Filter</h3>
+                        <input type="date" id="maps-start-date" class="maps__date-input">
+                        <input type="date" id="maps-end-date" class="maps__date-input">
+                        <button class="maps__filter-btn" id="apply-filters">Apply Filters</button>
+                    </div>
+                </div>
+                
+                <div class="maps__container">
+                    <div id="map" class="maps__display" role="application" aria-label="Interactive map of Gaza region"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Satellite Imagery Section -->
+        <section id="satellite" class="section section--satellite" aria-labelledby="satellite-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="satellite-title" class="section__title">Satellite Imagery Timeline</h2>
+                    <p class="section__subtitle">Visual documentation through satellite imagery</p>
+                </header>
+                
+                <div class="satellite__controls">
+                    <div class="satellite__location-selector">
+                        <label for="satellite-location">Location:</label>
+                        <select id="satellite-location" class="satellite__select">
+                            <option value="gaza-strip">Gaza Strip</option>
+                            <option value="gaza-city">Gaza City</option>
+                            <option value="rafah">Rafah</option>
+                            <option value="khan-younis">Khan Younis</option>
+                        </select>
+                    </div>
+                    
+                    <div class="satellite__date-range">
+                        <label for="satellite-start">Start Date:</label>
+                        <input type="date" id="satellite-start" class="satellite__date">
+                        <label for="satellite-end">End Date:</label>
+                        <input type="date" id="satellite-end" class="satellite__date">
+                    </div>
+                    
+                    <button class="satellite__load-btn" id="load-satellite-data">Load Imagery</button>
+                </div>
+                
+                <div class="satellite__viewer" id="satellite-viewer">
+                    <div class="satellite__comparison">
+                        <div class="satellite__before">
+                            <h3>Before</h3>
+                            <div class="satellite__image-container" id="satellite-before"></div>
+                        </div>
+                        <div class="satellite__after">
+                            <h3>After</h3>
+                            <div class="satellite__image-container" id="satellite-after"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="satellite__timelapse">
+                        <h3>Time-lapse View</h3>
+                        <div class="satellite__player" id="satellite-player">
+                            <div class="satellite__player-controls">
+                                <button id="satellite-play" aria-label="Play satellite time-lapse">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button id="satellite-pause" aria-label="Pause satellite time-lapse">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <input type="range" id="satellite-progress" class="satellite__progress" 
+                                       min="0" max="100" value="0" 
+                                       aria-label="Time-lapse progress">
+                            </div>
+                            <div class="satellite__current-image" id="satellite-current"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Sources Section -->
+        <section id="news" class="section section--news" aria-labelledby="news-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="news-title" class="section__title">Latest News Coverage</h2>
+                    <p class="section__subtitle">Real-time reporting from credible news sources</p>
+                </header>
+                
+                <div class="news__filters">
+                    <div class="news__source-filter">
+                        <h3>Sources</h3>
+                        <label class="news__checkbox">
+                            <input type="checkbox" name="news-source" value="bbc" checked>
+                            <span>BBC News</span>
+                        </label>
+                        <label class="news__checkbox">
+                            <input type="checkbox" name="news-source" value="reuters" checked>
+                            <span>Reuters</span>
+                        </label>
+                        <label class="news__checkbox">
+                            <input type="checkbox" name="news-source" value="ap" checked>
+                            <span>Associated Press</span>
+                        </label>
+                        <label class="news__checkbox">
+                            <input type="checkbox" name="news-source" value="aljazeera" checked>
+                            <span>Al Jazeera</span>
+                        </label>
+                    </div>
+                    
+                    <div class="news__date-filter">
+                        <h3>Date Range</h3>
+                        <input type="date" id="news-start-date" class="news__date-input">
+                        <input type="date" id="news-end-date" class="news__date-input">
+                        <button class="news__filter-btn" id="filter-news">Filter News</button>
+                    </div>
+                </div>
+                
+                <div class="news__grid" id="news-grid">
+                    <!-- News articles dynamically loaded here -->
+                </div>
+                
+                <div class="news__load-more">
+                    <button class="news__load-btn" id="load-more-news">Load More Articles</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geneva Conventions Section -->
+        <section id="geneva" class="section section--geneva" aria-labelledby="geneva-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="geneva-title" class="section__title">Geneva Conventions Analysis</h2>
+                    <p class="section__subtitle">International humanitarian law considerations</p>
+                </header>
+                
+                <div class="geneva__content">
+                    <div class="geneva__overview">
+                        <h3>Key Geneva Convention Articles</h3>
+                        <div class="geneva__articles" id="geneva-articles">
+                            <!-- Dynamic content loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="geneva__violations">
+                        <h3>Reported Violations</h3>
+                        <div class="geneva__violation-list" id="violation-list">
+                            <!-- Dynamic content loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="geneva__legal">
+                        <h3>Legal Proceedings</h3>
+                        <div class="geneva__proceedings" id="legal-proceedings">
+                            <!-- Dynamic content loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources Attribution Section -->
+        <section id="sources" class="section section--sources" aria-labelledby="sources-title">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="sources-title" class="section__title">Sources & Attribution</h2>
+                    <p class="section__subtitle">Transparency in data sources and methodology</p>
+                </header>
+                
+                <div class="sources__grid">
+                    <div class="sources__category">
+                        <h3>News Sources</h3>
+                        <ul class="sources__list" id="news-sources-list">
+                            <!-- Dynamic content loaded here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="sources__category">
+                        <h3>Satellite Imagery</h3>
+                        <ul class="sources__list" id="satellite-sources-list">
+                            <!-- Dynamic content loaded here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="sources__category">
+                        <h3>Geographic Data</h3>
+                        <ul class="sources__list" id="geo-sources-list">
+                            <!-- Dynamic content loaded here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="sources__category">
+                        <h3>Legal Documents</h3>
+                        <ul class="sources__list" id="legal-sources-list">
+                            <!-- Dynamic content loaded here -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sources__methodology">
+                    <h3>Methodology</h3>
+                    <div class="sources__method-content" id="methodology-content">
+                        <!-- Content about verification methods, fact-checking, etc. -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>About This Project</h3>
+                    <p>This documentation project aims to provide accurate, verified information about the Gaza conflict using credible sources and transparent methodology.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Disclaimer</h3>
+                    <p>This site is for educational and humanitarian documentation purposes. All sources are properly attributed and information is verified through multiple credible outlets.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                    <p>For corrections, suggestions, or additional verified information, please contact the documentation team.</p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Gaza War Documentation Project. Created for humanitarian documentation purposes.</p>
+                <p>Last updated: <span id="last-updated"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="src/main.js" type="module"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

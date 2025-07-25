@@ -1,0 +1,313 @@
+{
+  "news_sources": {
+    "title": "Gaza War News Sources Configuration",
+    "description": "Configuration for news sources, API endpoints, and source credibility ratings",
+    "primary_sources": [
+      {
+        "id": "bbc-news",
+        "name": "BBC News",
+        "url": "https://www.bbc.com/news",
+        "api_endpoint": "https://newsapi.org/v2/sources?sources=bbc-news",
+        "region": "international",
+        "language": "english",
+        "credibility_rating": "high",
+        "bias_rating": "center",
+        "specialization": "general_news",
+        "gaza_coverage": "comprehensive",
+        "update_frequency": "continuous",
+        "contact": {
+          "email": "newsonline@bbc.co.uk",
+          "twitter": "@BBCBreaking"
+        },
+        "attribution": "© BBC",
+        "license": "standard_copyright"
+      },
+      {
+        "id": "cbc-news",
+        "name": "CBC News",
+        "url": "https://www.cbc.ca/news",
+        "api_endpoint": "https://www.cbc.ca/aggregate_api/v1/items",
+        "region": "canada",
+        "language": "english",
+        "credibility_rating": "high",
+        "bias_rating": "center-left",
+        "specialization": "general_news",
+        "gaza_coverage": "regular",
+        "update_frequency": "continuous",
+        "contact": {
+          "email": "audience@cbc.ca",
+          "twitter": "@CBCNews"
+        },
+        "attribution": "© CBC/Radio-Canada",
+        "license": "standard_copyright"
+      },
+      {
+        "id": "al-jazeera",
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com",
+        "api_endpoint": "https://www.aljazeera.com/xml/rss/all.xml",
+        "region": "middle_east",
+        "language": "english",
+        "credibility_rating": "high",
+        "bias_rating": "center-left",
+        "specialization": "middle_east_affairs",
+        "gaza_coverage": "extensive",
+        "update_frequency": "continuous",
+        "perspective": "arab_world",
+        "contact": {
+          "email": "webmaster@aljazeera.net",
+          "twitter": "@AJEnglish"
+        },
+        "attribution": "© Al Jazeera Media Network",
+        "license": "standard_copyright"
+      },
+      {
+        "id": "the-times",
+        "name": "The Times",
+        "url": "https://www.thetimes.co.uk",
+        "api_endpoint": "https://www.thetimes.co.uk/article",
+        "region": "uk",
+        "language": "english",
+        "credibility_rating": "high",
+        "bias_rating": "center-right",
+        "specialization": "general_news",
+        "gaza_coverage": "regular",
+        "update_frequency": "daily",
+        "contact": {
+          "email": "newsdesk@thetimes.co.uk",
+          "twitter": "@thetimes"
+        },
+        "attribution": "© The Times",
+        "license": "subscription_required"
+      },
+      {
+        "id": "reuters",
+        "name": "Reuters",
+        "url": "https://www.reuters.com",
+        "api_endpoint": "https://newsapi.org/v2/sources?sources=reuters",
+        "region": "international",
+        "language": "english",
+        "credibility_rating": "very_high",
+        "bias_rating": "center",
+        "specialization": "breaking_news",
+        "gaza_coverage": "comprehensive",
+        "update_frequency": "continuous",
+        "contact": {
+          "email": "reuters.feedback@thomsonreuters.com",
+          "twitter": "@Reuters"
+        },
+        "attribution": "© Reuters",
+        "license": "standard_copyright"
+      },
+      {
+        "id": "associated-press",
+        "name": "Associated Press",
+        "url": "https://apnews.com",
+        "api_endpoint": "https://newsapi.org/v2/sources?sources=associated-press",
+        "region": "international",
+        "language": "english",
+        "credibility_rating": "very_high",
+        "bias_rating": "center",
+        "specialization": "wire_service",
+        "gaza_coverage": "comprehensive",
+        "update_frequency": "continuous",
+        "contact": {
+          "email": "info@ap.org",
+          "twitter": "@AP"
+        },
+        "attribution": "© Associated Press",
+        "license": "standard_copyright"
+      }
+    ],
+    "regional_sources": [
+      {
+        "id": "haaretz",
+        "name": "Haaretz",
+        "url": "https://www.haaretz.com",
+        "region": "israel",
+        "language": "english",
+        "credibility_rating": "high",
+        "bias_rating": "center-left",
+        "specialization": "israeli_affairs",
+        "perspective": "israeli_left",
+        "gaza_coverage": "extensive",
+        "attribution": "© Haaretz Daily Newspaper Ltd."
+      },
+      {
+        "id": "times-of-israel",
+        "name": "The Times of Israel",
+        "url": "https://www.timesofisrael.com",
+        "region": "israel",
+        "language": "english",
+        "credibility_rating": "high",
+        "bias_rating": "center",
+        "specialization": "israeli_affairs",
+        "perspective": "israeli_center",
+        "gaza_coverage": "extensive",
+        "attribution": "© The Times of Israel"
+      },
+      {
+        "id": "wafa",
+        "name": "WAFA Palestinian News Agency",
+        "url": "https://english.wafa.ps",
+        "region": "palestine",
+        "language": "english",
+        "credibility_rating": "medium",
+        "bias_rating": "pro-palestinian",
+        "specialization": "palestinian_affairs",
+        "perspective": "palestinian_official",
+        "gaza_coverage": "extensive",
+        "attribution": "© WAFA"
+      },
+      {
+        "id": "middle-east-eye",
+        "name": "Middle East Eye",
+        "url": "https://www.middleeasteye.net",
+        "region": "middle_east",
+        "language": "english",
+        "credibility_rating": "medium-high",
+        "bias_rating": "pro-palestinian",
+        "specialization": "middle_east_affairs",
+        "gaza_coverage": "extensive",
+        "attribution": "© Middle East Eye"
+      }
+    ],
+    "fact_checking": [
+      {
+        "id": "snopes",
+        "name": "Snopes",
+        "url": "https://www.snopes.com",
+        "specialization": "fact_checking",
+        "credibility_rating": "very_high"
+      },
+      {
+        "id": "factcheck-org",
+        "name": "FactCheck.org",
+        "url": "https://www.factcheck.org",
+        "specialization": "fact_checking",
+        "credibility_rating": "very_high"
+      }
+    ],
+    "international_organizations": [
+      {
+        "id": "un-ocha",
+        "name": "UN OCHA",
+        "url": "https://www.unocha.org",
+        "type": "humanitarian",
+        "specialization": "humanitarian_affairs",
+        "credibility_rating": "very_high",
+        "gaza_coverage": "extensive",
+        "attribution": "© United Nations OCHA"
+      },
+      {
+        "id": "unrwa",
+        "name": "UNRWA",
+        "url": "https://www.unrwa.org",
+        "type": "refugee_affairs",
+        "specialization": "palestinian_refugees",
+        "credibility_rating": "very_high",
+        "gaza_coverage": "extensive",
+        "attribution": "© UNRWA"
+      },
+      {
+        "id": "icrc",
+        "name": "International Committee of the Red Cross",
+        "url": "https://www.icrc.org",
+        "type": "humanitarian",
+        "specialization": "international_humanitarian_law",
+        "credibility_rating": "very_high",
+        "gaza_coverage": "regular",
+        "attribution": "© ICRC"
+      },
+      {
+        "id": "who",
+        "name": "World Health Organization",
+        "url": "https://www.who.int",
+        "type": "health",
+        "specialization": "public_health",
+        "credibility_rating": "very_high",
+        "gaza_coverage": "health_focused",
+        "attribution": "© WHO"
+      }
+    ],
+    "source_categories": {
+      "mainstream_international": ["bbc-news", "cbc-news", "reuters", "associated-press"],
+      "regional_middle_east": ["al-jazeera", "haaretz", "times-of-israel", "wafa"],
+      "wire_services": ["reuters", "associated-press"],
+      "fact_checkers": ["snopes", "factcheck-org"],
+      "humanitarian": ["un-ocha", "unrwa", "icrc", "who"],
+      "high_credibility": ["bbc-news", "reuters", "associated-press", "un-ocha"],
+      "extensive_gaza_coverage": ["al-jazeera", "haaretz", "times-of-israel", "un-ocha", "unrwa"]
+    },
+    "api_configuration": {
+      "news_api": {
+        "base_url": "https://newsapi.org/v2",
+        "endpoints": {
+          "everything": "/everything",
+          "top_headlines": "/top-headlines",
+          "sources": "/sources"
+        },
+        "rate_limit": "1000_requests_per_day",
+        "authentication": "api_key_required"
+      },
+      "rss_feeds": {
+        "update_interval": "15_minutes",
+        "timeout": "30_seconds",
+        "max_articles": 100
+      },
+      "cache_policy": {
+        "articles": "6_hours",
+        "source_metadata": "24_hours",
+        "images": "7_days"
+      }
+    },
+    "content_guidelines": {
+      "verification": {
+        "minimum_sources": 2,
+        "cross_reference": true,
+        "fact_check": "recommended",
+        "update_corrections": true
+      },
+      "attribution": {
+        "source_name": "required",
+        "publication_date": "required",
+        "author": "if_available",
+        "direct_link": "required"
+      },
+      "bias_disclosure": {
+        "include_rating": true,
+        "multiple_perspectives": "recommended",
+        "regional_context": true
+      }
+    },
+    "search_keywords": [
+      "gaza war",
+      "gaza conflict",
+      "israel palestine",
+      "hamas israel",
+      "gaza strip",
+      "gaza casualties",
+      "gaza humanitarian",
+      "gaza ceasefire",
+      "gaza aid",
+      "gaza hostages",
+      "operation iron swords",
+      "al-aqsa flood",
+      "gaza siege",
+      "rafah crossing",
+      "gaza hospitals",
+      "gaza refugees",
+      "west bank",
+      "palestine israel conflict",
+      "middle east crisis"
+    ],
+    "metadata": {
+      "last_updated": "2024-01-20",
+      "version": "1.0",
+      "total_sources": 16,
+      "coverage_regions": ["international", "middle_east", "israel", "palestine"],
+      "languages_supported": ["english"],
+      "update_frequency": "continuous"
+    }
+  }
+}

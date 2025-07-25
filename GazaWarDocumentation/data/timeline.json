@@ -1,0 +1,246 @@
+{
+  "timeline": {
+    "title": "Gaza War Timeline 2023-2024",
+    "description": "Comprehensive timeline of events in the Gaza conflict",
+    "events": [
+      {
+        "id": "hamas-attack-2023-10-07",
+        "date": "2023-10-07",
+        "time": "06:30",
+        "title": "Hamas Attack on Israel",
+        "description": "Hamas launches surprise attack on Israel, including rocket barrages and ground infiltration. Over 1,200 Israelis killed and 240+ taken hostage.",
+        "type": "attack",
+        "location": {
+          "name": "Gaza-Israel Border",
+          "coordinates": [31.28, 34.25]
+        },
+        "casualties": {
+          "israeli": {
+            "killed": 1200,
+            "wounded": 3000,
+            "hostages": 240
+          }
+        },
+        "sources": [
+          {
+            "name": "BBC News",
+            "url": "https://www.bbc.com/news/world-middle-east",
+            "title": "Hamas attacks Israel by land, sea and air"
+          },
+          {
+            "name": "CNN",
+            "url": "https://www.cnn.com/2023/10/07/middleeast/israel-gaza-hamas-attack",
+            "title": "Hamas launches surprise attack on Israel"
+          }
+        ],
+        "significance": "high",
+        "verified": true
+      },
+      {
+        "id": "israel-response-2023-10-07",
+        "date": "2023-10-07",
+        "time": "14:00",
+        "title": "Israel Declares War",
+        "description": "Israel declares war on Hamas and begins Operation Iron Swords. Airstrikes begin on Gaza targets.",
+        "type": "declaration",
+        "location": {
+          "name": "Jerusalem",
+          "coordinates": [31.768, 35.214]
+        },
+        "sources": [
+          {
+            "name": "Times of Israel",
+            "url": "https://www.timesofisrael.com",
+            "title": "Israel declares war on Hamas"
+          }
+        ],
+        "significance": "high",
+        "verified": true
+      },
+      {
+        "id": "gaza-blockade-2023-10-09",
+        "date": "2023-10-09",
+        "time": "12:00",
+        "title": "Complete Siege of Gaza",
+        "description": "Israel announces complete siege of Gaza, cutting off electricity, food, water, and fuel supplies to 2.3 million residents.",
+        "type": "siege",
+        "location": {
+          "name": "Gaza Strip",
+          "coordinates": [31.4, 34.4]
+        },
+        "affected": {
+          "civilians": 2300000
+        },
+        "sources": [
+          {
+            "name": "Al Jazeera",
+            "url": "https://www.aljazeera.com/news/2023/10/9/israel-imposes-complete-siege-on-gaza",
+            "title": "Israel imposes 'complete siege' on Gaza"
+          },
+          {
+            "name": "Reuters",
+            "url": "https://www.reuters.com/world/middle-east/israel-orders-complete-siege-gaza-2023-10-09/",
+            "title": "Israel orders complete siege of Gaza"
+          }
+        ],
+        "significance": "high",
+        "verified": true,
+        "genevaConvention": {
+          "violation": "potential",
+          "article": "Article 33 - Collective Punishment",
+          "description": "Complete siege affecting entire civilian population may constitute collective punishment"
+        }
+      },
+      {
+        "id": "ground-invasion-2023-10-27",
+        "date": "2023-10-27",
+        "time": "20:00",
+        "title": "Israeli Ground Invasion Begins",
+        "description": "Israel launches ground invasion of Gaza with tanks and infantry entering the territory.",
+        "type": "military_operation",
+        "location": {
+          "name": "Northern Gaza",
+          "coordinates": [31.5, 34.4]
+        },
+        "sources": [
+          {
+            "name": "BBC News",
+            "url": "https://www.bbc.com/news/world-middle-east",
+            "title": "Israel launches ground invasion of Gaza"
+          }
+        ],
+        "significance": "high",
+        "verified": true
+      },
+      {
+        "id": "hospital-strike-2023-10-17",
+        "date": "2023-10-17",
+        "time": "19:00",
+        "title": "Gaza Hospital Explosion",
+        "description": "Explosion at Al-Ahli Arab Hospital in Gaza City. Disputed responsibility and casualty figures.",
+        "type": "incident",
+        "location": {
+          "name": "Al-Ahli Arab Hospital",
+          "coordinates": [31.503, 34.464]
+        },
+        "casualties": {
+          "disputed": true,
+          "palestinian_claim": 471,
+          "israeli_claim": "unclear"
+        },
+        "sources": [
+          {
+            "name": "CNN",
+            "url": "https://www.cnn.com/2023/10/17/middleeast/gaza-hospital-blast",
+            "title": "Deadly blast at Gaza hospital sparks rage"
+          },
+          {
+            "name": "Washington Post",
+            "url": "https://www.washingtonpost.com/world/2023/10/17/gaza-hospital-explosion",
+            "title": "Gaza hospital blast: What we know"
+          }
+        ],
+        "significance": "high",
+        "verified": "disputed",
+        "controversy": "Responsibility disputed between Israeli airstrikes and failed Hamas rocket"
+      },
+      {
+        "id": "humanitarian-pause-2023-11-24",
+        "date": "2023-11-24",
+        "time": "07:00",
+        "title": "Temporary Ceasefire Begins",
+        "description": "Four-day humanitarian pause begins, allowing hostage exchanges and aid delivery.",
+        "type": "ceasefire",
+        "location": {
+          "name": "Gaza Strip",
+          "coordinates": [31.4, 34.4]
+        },
+        "duration": "4 days",
+        "terms": {
+          "hostages_released": 50,
+          "prisoners_released": 150,
+          "aid_trucks": 200
+        },
+        "sources": [
+          {
+            "name": "Reuters",
+            "url": "https://www.reuters.com/world/middle-east/gaza-ceasefire-begins-2023-11-24/",
+            "title": "Gaza ceasefire begins with hostage releases"
+          }
+        ],
+        "significance": "medium",
+        "verified": true
+      },
+      {
+        "id": "south-gaza-operations-2023-12-01",
+        "date": "2023-12-01",
+        "time": "10:00",
+        "title": "Operations Expand to Southern Gaza",
+        "description": "Israeli military operations expand to southern Gaza after ceasefire ends. Leaflets dropped warning civilians to evacuate.",
+        "type": "military_operation",
+        "location": {
+          "name": "Khan Younis",
+          "coordinates": [31.34, 34.3]
+        },
+        "displaced": {
+          "civilians": 800000
+        },
+        "sources": [
+          {
+            "name": "Associated Press",
+            "url": "https://apnews.com/article/israel-gaza-south-operations-2023",
+            "title": "Israel expands operations to southern Gaza"
+          }
+        ],
+        "significance": "high",
+        "verified": true
+      },
+      {
+        "id": "rafah-operations-2024-05-01",
+        "date": "2024-05-01",
+        "time": "05:00",
+        "title": "Rafah Operations Begin",
+        "description": "Israeli forces begin operations in Rafah, Gaza's southernmost city near the Egyptian border.",
+        "type": "military_operation",
+        "location": {
+          "name": "Rafah",
+          "coordinates": [31.3, 34.24]
+        },
+        "displaced": {
+          "civilians": 1000000
+        },
+        "sources": [
+          {
+            "name": "BBC News",
+            "url": "https://www.bbc.com/news/world-middle-east",
+            "title": "Israel begins Rafah operations"
+          }
+        ],
+        "significance": "high",
+        "verified": true,
+        "internationalConcern": "High concern from Egypt and international community about civilian displacement"
+      }
+    ],
+    "statistics": {
+      "totalEvents": 8,
+      "timespan": {
+        "start": "2023-10-07",
+        "end": "2024-05-01"
+      },
+      "eventTypes": {
+        "attack": 1,
+        "declaration": 1,
+        "siege": 1,
+        "military_operation": 3,
+        "incident": 1,
+        "ceasefire": 1
+      }
+    },
+    "metadata": {
+      "lastUpdated": "2024-01-20",
+      "version": "1.0",
+      "sources": "Multiple international news organizations",
+      "disclaimer": "Timeline based on publicly available information. Some events may have disputed details or casualty figures."
+    }
+  }
+}

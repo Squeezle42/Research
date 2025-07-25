@@ -1,0 +1,491 @@
+/**
+ * Satellite Imagery Styles
+ * Gaza War Documentation Website
+ */
+
+/* Satellite Section */
+.section--satellite {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.satellite__controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    align-items: end;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.satellite__location-selector,
+.satellite__date-range {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.satellite__date-range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    align-items: end;
+}
+
+.satellite__date-range label {
+    grid-column: span 1;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.satellite__select,
+.satellite__date {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    transition: border-color 0.3s ease;
+}
+
+.satellite__select:focus,
+.satellite__date:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-alpha);
+}
+
+.satellite__load-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: end;
+}
+
+.satellite__load-btn:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.satellite__load-btn:disabled {
+    background: var(--color-gray-400);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Satellite Viewer */
+.satellite__viewer {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.satellite__viewer.loading {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.satellite__viewer.loading::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 4px solid var(--color-gray-300);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: satellite-loading 1s linear infinite;
+    z-index: 10;
+}
+
+@keyframes satellite-loading {
+    to { transform: rotate(360deg); }
+}
+
+/* Comparison View */
+.satellite__comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.satellite__before,
+.satellite__after {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.satellite__before h3,
+.satellite__after h3 {
+    padding: var(--spacing-md);
+    margin: 0;
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+}
+
+.satellite__image-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    background: var(--color-gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.satellite__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.satellite__image.loaded {
+    opacity: 1;
+}
+
+.satellite__image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.satellite__image-label {
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.satellite__image-label h4 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+}
+
+.satellite__image-date {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.satellite__image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+    padding: var(--spacing-md);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.satellite__image-container:hover .satellite__image-overlay {
+    opacity: 1;
+}
+
+.satellite__image-meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.satellite__provider,
+.satellite__resolution,
+.satellite__cloud-cover {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+.satellite__provider {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.satellite__image-info {
+    padding: var(--spacing-md);
+    background: var(--color-gray-50);
+}
+
+.satellite__metadata {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.satellite__metadata-item {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.satellite__metadata-item strong {
+    color: var(--color-text-primary);
+}
+
+.satellite__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.satellite__action-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.satellite__action-btn:hover {
+    background: var(--color-gray-50);
+    border-color: var(--color-primary);
+}
+
+/* Timelapse Player */
+.satellite__timelapse {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.satellite__timelapse h3 {
+    padding: var(--spacing-md);
+    margin: 0;
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-lg);
+}
+
+.satellite__player {
+    padding: var(--spacing-md);
+}
+
+.satellite__player-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-gray-50);
+    border-radius: var(--border-radius-sm);
+}
+
+.satellite__player-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.satellite__player-controls button:hover {
+    background: var(--color-primary-dark);
+    transform: scale(1.05);
+}
+
+.satellite__player-controls button:disabled {
+    background: var(--color-gray-400);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.satellite__progress {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-gray-300);
+    cursor: pointer;
+    appearance: none;
+}
+
+.satellite__progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+.satellite__progress::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.satellite__current-image {
+    position: relative;
+    min-height: 400px;
+    background: var(--color-gray-100);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+/* Error States */
+.satellite__error-state,
+.satellite__no-data {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--color-text-secondary);
+}
+
+.satellite__error-state h3,
+.satellite__no-data h3 {
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.satellite__error-state button {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+}
+
+.satellite__error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background: var(--color-gray-100);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Notifications */
+.satellite__notification {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    animation: satellite-notification-slide 0.3s ease-out;
+}
+
+@keyframes satellite-notification-slide {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .satellite__controls {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .satellite__date-range {
+        grid-template-columns: 1fr;
+    }
+    
+    .satellite__comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .satellite__player-controls {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+    
+    .satellite__progress {
+        order: 3;
+        flex-basis: 100%;
+    }
+    
+    .satellite__metadata {
+        grid-template-columns: 1fr;
+    }
+    
+    .satellite__actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .satellite__current-image {
+        min-height: 250px;
+    }
+    
+    .satellite__image-container {
+        min-height: 200px;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .satellite__image-overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+    }
+    
+    .satellite__provider,
+    .satellite__resolution,
+    .satellite__cloud-cover {
+        background: var(--color-text-primary);
+        color: var(--color-white);
+        border: 1px solid var(--color-white);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .satellite__image,
+    .satellite__image-overlay,
+    .satellite__player-controls button,
+    .satellite__load-btn {
+        transition: none;
+    }
+    
+    .satellite__viewer.loading::before {
+        animation: none;
+    }
+    
+    .satellite__notification {
+        animation: none;
+    }
+}
