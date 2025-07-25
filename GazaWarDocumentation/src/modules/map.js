@@ -37,7 +37,7 @@ export class InteractiveMap {
             layers: ['events', 'infrastructure', 'humanitarian', 'borders'],
             tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution: '© OpenStreetMap contributors',
-            dataSource: 'src/data/locations.json',
+            dataSource: 'data/locations.json',
             ...config
         };
 

@@ -85,7 +85,7 @@ class GazaWarDocumentation {
                 class: Timeline,
                 container: '#timeline-container',
                 config: {
-                    dataSource: 'src/data/events.json',
+                    dataSource: 'data/timeline.json',
                     autoPlay: false,
                     showControls: true
                 }
@@ -95,6 +95,7 @@ class GazaWarDocumentation {
                 class: InteractiveMap,
                 container: '#map',
                 config: {
+                    dataSource: 'data/locations.json',
                     center: [31.5, 34.5], // Gaza coordinates
                     zoom: 10,
                     layers: ['events', 'infrastructure', 'humanitarian', 'borders']
@@ -105,6 +106,7 @@ class GazaWarDocumentation {
                 class: NewsIntegration,
                 container: '#news-grid',
                 config: {
+                    dataSource: 'data/news_sources.json',
                     sources: ['bbc', 'reuters', 'ap', 'aljazeera'],
                     updateInterval: 300000, // 5 minutes
                     maxArticles: 12
@@ -245,6 +247,8 @@ class GazaWarDocumentation {
                         // Close mobile menu
                         if (navMenu) {
                             navMenu.classList.remove('active');
+                        }
+                        if (navToggle) {
                             navToggle.setAttribute('aria-expanded', 'false');
                         }
                     }

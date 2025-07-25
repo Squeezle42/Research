@@ -374,6 +374,7 @@ export class SourcesManager {
      * Format region name
      */
     formatRegion(region) {
+        if (!region) return 'Unknown';
         return region.replace(/_/g, ' ').split(' ').map(word => 
             word.charAt(0).toUpperCase() + word.slice(1)
         ).join(' ');

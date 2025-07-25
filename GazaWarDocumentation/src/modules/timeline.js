@@ -30,7 +30,7 @@ export class Timeline {
         }
 
         this.config = {
-            dataSource: 'src/data/events.json',
+            dataSource: 'data/timeline.json',
             autoPlay: false,
             showControls: true,
             animationDuration: 1000,
