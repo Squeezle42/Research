@@ -100,12 +100,18 @@ export class Timeline {
             const httpClient = new HttpClient();
             const data = await httpClient.get(this.config.dataSource);
             
-            if (!Array.isArray(data)) {
-                throw new Error('Timeline data must be an array');
+            // Handle both direct array and nested object structure
+            let eventsData;
+            if (Array.isArray(data)) {
+                eventsData = data;
+            } else if (data && data.timeline && Array.isArray(data.timeline.events)) {
+                eventsData = data.timeline.events;
+            } else {
+                throw new Error('Timeline data must be an array or contain timeline.events array');
             }
 
             // Process and sort events by date
-            this.events = data
+            this.events = eventsData
                 .map(event => ({
                     ...event,
                     date: new Date(event.date),

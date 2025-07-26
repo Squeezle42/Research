@@ -1,0 +1,1189 @@
+/* Multi-Player Game Theory Styles */
+
+/* Coalition Cards */
+.coalitions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.coalition-card {
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.coalition-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.coalition-card.pro-israel {
+    border-color: #1976d2;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.coalition-card.pro-palestinian {
+    border-color: #388e3c;
+    background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+}
+
+.coalition-card.resistance-axis {
+    border-color: #d32f2f;
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+}
+
+.coalition-card.opportunistic {
+    border-color: #f57c00;
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+}
+
+.coalition-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid;
+    padding-bottom: 0.5rem;
+}
+
+.coalition-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.coalition-card li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.coalition-card li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+    color: inherit;
+}
+
+.coalition-incentive {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 6px;
+    font-style: italic;
+    border-left: 4px solid;
+}
+
+/* Multi-Player Matrix */
+.multi-player-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.multi-player-matrix th,
+.multi-player-matrix td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.multi-player-matrix th {
+    background: #2c3e50;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.multi-player-matrix td:nth-child(3),
+.multi-player-matrix td:nth-child(4),
+.multi-player-matrix td:nth-child(5) {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.multi-player-matrix tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.multi-player-matrix tr:hover {
+    background: #e3f2fd;
+    transition: background 0.3s ease;
+}
+
+/* Player Analysis Grid */
+.player-analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.player-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.player-card h4 {
+    color: #1976d2;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 0.5rem;
+}
+
+.strategic-position {
+    font-size: 0.95rem;
+}
+
+.strategic-position > p {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.payoff-breakdown {
+    margin: 1.5rem 0;
+}
+
+.payoff-breakdown p {
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.payoff-breakdown ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.payoff-breakdown li {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.payoff-breakdown li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1976d2;
+    font-weight: bold;
+}
+
+.strategic-constraints {
+    background: #f5f5f5;
+    border-left: 4px solid #ff9800;
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1rem;
+}
+
+.strategic-constraints p {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+}
+
+/* Equilibrium Table */
+.equilibrium-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.equilibrium-table th,
+.equilibrium-table td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.equilibrium-table th {
+    background: #34495e;
+    color: white;
+    font-weight: 600;
+}
+
+.equilibrium-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.equilibrium-table td:nth-child(2) {
+    text-align: left;
+}
+
+.equilibrium-table .core-player {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+}
+
+.equilibrium-table .coalition-resist {
+    background: #ffebee;
+    border-left: 4px solid #d32f2f;
+}
+
+.equilibrium-table .coalition-moderate {
+    background: #e8f5e8;
+    border-left: 4px solid #388e3c;
+}
+
+.equilibrium-table .coalition-opportunist {
+    background: #fff3e0;
+    border-left: 4px solid #f57c00;
+}
+
+/* Equilibrium Factors */
+.equilibrium-factors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.factor-group {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.factor-group h6 {
+    color: #495057;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.factor-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.factor-group li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.factor-group li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #6c757d;
+    font-weight: bold;
+}
+
+/* Coalition Analysis */
+.coalition-stability-results {
+    background: white;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.coalition-stability-results h4 {
+    color: #28a745;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.coalition-stability-results ol {
+    list-style: none;
+    counter-reset: coalition-counter;
+    padding: 0;
+}
+
+.coalition-stability-results li {
+    counter-increment: coalition-counter;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+    position: relative;
+}
+
+.coalition-stability-results li::before {
+    content: counter(coalition-counter);
+    position: absolute;
+    left: -2rem;
+    top: 1rem;
+    background: #28a745;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.coalition-stability-results em {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mechanism Design */
+.mechanism-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.mechanism-component {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mechanism-component h5 {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: -2rem -2rem 1.5rem -2rem;
+}
+
+.mechanism-component ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mechanism-component li {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #6c757d;
+}
+
+.mechanism-component strong {
+    color: #495057;
+}
+
+/* Multi-player overview */
+.multi-player-overview {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 2px solid #dee2e6;
+}
+
+.multi-player-overview h3 {
+    text-align: center;
+    color: #495057;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .coalitions-grid,
+    .player-analysis-grid,
+    .equilibrium-factors,
+    .mechanism-components {
+        grid-template-columns: 1fr;
+    }
+    
+    .multi-player-matrix {
+        font-size: 0.8rem;
+    }
+    
+    .multi-player-matrix th,
+    .multi-player-matrix td {
+        padding: 0.5rem;
+    }
+    
+    .equilibrium-table {
+        font-size: 0.85rem;
+    }
+    
+    .coalition-stability-results li::before {
+        left: -1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+.game-theory-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.disclaimer {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Actor Analysis Grid */
+.actors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.actor-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.actor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.actor-card h3 {
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-primary);
+    padding-bottom: 0.5rem;
+}
+
+.incentives h4 {
+    color: var(--text-secondary);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.incentives ul {
+    list-style: none;
+    padding: 0;
+}
+
+.incentives li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.incentives li::before {
+    content: "▶";
+    color: var(--accent-primary);
+    position: absolute;
+    left: 0;
+}
+
+.incentives li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Model Containers */
+.model-container {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.model-container h3 {
+    color: var(--accent-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 1rem;
+}
+
+/* Equation Blocks */
+.equation-block {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+.equation-block p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.equation-block ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.equation-block li {
+    margin: 0.5rem 0;
+    font-family: inherit;
+}
+
+/* Game Matrix Table */
+.game-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-matrix th,
+.game-matrix td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.game-matrix th {
+    background: var(--accent-primary);
+    color: white;
+    font-weight: 600;
+}
+
+.game-matrix td:first-child {
+    background: #f8f9fa;
+    font-weight: 600;
+    text-align: left;
+}
+
+.game-matrix td:not(:first-child) {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.matrix-note {
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Payoff Analysis */
+.payoff-analysis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.actor-analysis {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.actor-analysis h3 {
+    color: var(--accent-secondary);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: -2rem -2rem 1.5rem -2rem;
+}
+
+.gain-category {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-left: 3px solid var(--accent-primary);
+    background: #f8f9fa;
+}
+
+.gain-category h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Equilibrium Analysis */
+.equilibrium-analysis {
+    background: var(--card-background);
+    border: 2px solid var(--accent-primary);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.equilibrium-result {
+    background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+    border: 1px solid #4caf50;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.equilibrium-result h4 {
+    color: #2e7d32;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.equilibrium-explanation p {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.equilibrium-explanation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.equilibrium-explanation li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.equilibrium-explanation li::before {
+    content: "✓";
+    color: #4caf50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Prisoner's Dilemma Matrix */
+.dilemma-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1rem;
+    background: white;
+}
+
+.dilemma-matrix th,
+.dilemma-matrix td {
+    border: 2px solid #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+.dilemma-matrix th {
+    background: #333;
+    color: white;
+    font-weight: 600;
+}
+
+.dilemma-matrix td:first-child {
+    background: #f0f0f0;
+    font-weight: 600;
+    text-align: left;
+}
+
+.dilemma-matrix td:not(:first-child) {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* Stability Analysis */
+.stability-analysis {
+    background: #fff3e0;
+    border: 1px solid #ff9800;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stability-analysis h3 {
+    color: #e65100;
+    margin-bottom: 1rem;
+}
+
+/* Implications Grid */
+.implications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.implication-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.implication-card h3 {
+    color: var(--accent-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-secondary);
+    padding-bottom: 0.5rem;
+}
+
+.implication-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.implication-card li {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.implication-card li::before {
+    content: "•";
+    color: var(--accent-secondary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Sources Section */
+.sources-section {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+.methodology,
+.data-sources {
+    margin: 2rem 0;
+}
+
+.methodology h3,
+.data-sources h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 1rem;
+}
+
+.methodology ul,
+.data-sources ul {
+    list-style: none;
+    padding: 0;
+}
+
+.methodology li,
+.data-sources li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.methodology li::before,
+.data-sources li::before {
+    content: "📚";
+    position: absolute;
+    left: 0;
+}
+
+.disclaimers {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.disclaimers h3 {
+    color: #856404;
+    margin-bottom: 1rem;
+}
+
+.disclaimers p {
+    color: #856404;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* MathJax styling */
+.MathJax {
+    font-size: 1.1em !important;
+}
+
+/* Multi-Player Calculator Styles */
+.multi-player-results {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.scenario-tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: #e9ecef;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.tab-button:hover {
+    background: #dee2e6;
+}
+
+.tab-button.active {
+    background: #007bff;
+    color: white;
+}
+
+.scenario-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.scenario-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.multi-utility-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.multi-utility-table th,
+.multi-utility-table td {
+    border: 1px solid #dee2e6;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.multi-utility-table th {
+    background: #343a40;
+    color: white;
+    font-weight: 600;
+}
+
+.multi-utility-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.multi-utility-table .top-rank {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+.multi-utility-table .mid-rank {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+.multi-utility-table .bottom-rank {
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+/* Multi-Player Prediction Styles */
+.multi-prediction-result {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+.coalition-strengths,
+.stability-prediction,
+.scenario-recommendation {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coalition-strengths h6,
+.stability-prediction h6,
+.scenario-recommendation h6 {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.coalition-rank {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.coalition-rank:hover {
+    transform: translateX(5px);
+}
+
+.rank-number {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    margin-right: 1rem;
+}
+
+.rank-1 .rank-number {
+    background: #ffd700;
+    color: #333;
+}
+
+.rank-2 .rank-number {
+    background: #c0c0c0;
+    color: #333;
+}
+
+.rank-3 .rank-number {
+    background: #cd7f32;
+}
+
+.rank-4 .rank-number {
+    background: #6c757d;
+}
+
+.coalition-name {
+    flex: 1;
+    font-weight: 600;
+    color: #495057;
+}
+
+.strength-score {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.stability-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+}
+
+.metric-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.metric-value {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.scenario-recommendation {
+    border: 2px solid #28a745;
+}
+
+.scenario-recommendation h6 {
+    color: #28a745;
+}
+
+.outcome-probability {
+    background: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Responsive Design for Multi-Player Elements */
+@media (max-width: 768px) {
+    .scenario-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .tab-button:last-child {
+        border-bottom: none;
+    }
+    
+    .stability-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .coalition-rank {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .rank-number {
+        margin: 0 0 0.5rem 0;
+    }
+}
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .actors-grid,
+    .payoff-analysis,
+    .implications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-matrix,
+    .dilemma-matrix {
+        font-size: 0.9rem;
+    }
+    
+    .game-matrix th,
+    .game-matrix td,
+    .dilemma-matrix th,
+    .dilemma-matrix td {
+        padding: 0.5rem;
+    }
+    
+    .actor-analysis h3 {
+        margin: -2rem -1rem 1.5rem -1rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .equation-block {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .game-matrix,
+    .dilemma-matrix {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .game-matrix th,
+    .dilemma-matrix th {
+        background: #4a5568;
+    }
+    
+    .equilibrium-result {
+        background: linear-gradient(135deg, #2d4a2d, #3a5f3a);
+        border-color: #68d391;
+    }
+    
+    .stability-analysis {
+        background: #3d2914;
+        border-color: #ed8936;
+    }
+    
+    .disclaimers {
+        background: #3d3914;
+        border-color: #ecc94b;
+    }
+    
+    .disclaimers h3,
+    .disclaimers p {
+        color: #ecc94b;
+    }
+}

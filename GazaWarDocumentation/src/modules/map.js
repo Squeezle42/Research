@@ -100,14 +100,30 @@ export class InteractiveMap {
             const httpClient = new HttpClient();
             const data = await httpClient.get(this.config.dataSource);
             
-            if (!Array.isArray(data)) {
-                throw new Error('Location data must be an array');
+            // Handle nested location data structure
+            let locationData = [];
+            if (Array.isArray(data)) {
+                locationData = data;
+            } else if (data && data.locations) {
+                // Combine all location types into one array
+                locationData = [
+                    ...(data.locations.regions || []),
+                    ...(data.locations.cities || []),
+                    ...(data.locations.military_sites || []),
+                    ...(data.locations.infrastructure || []),
+                    ...(data.locations.refugee_camps || []),
+                    ...(data.locations.crossing_points || []),
+                    ...(data.locations.damage_zones || []),
+                    ...(data.locations.evacuation_zones || [])
+                ];
+            } else {
+                throw new Error('Location data must be an array or contain locations object');
             }
 
-            this.locationData = data.map(location => ({
+            this.locationData = locationData.map(location => ({
                 ...location,
                 date: location.date ? new Date(location.date) : null,
-                coordinates: [location.lat, location.lng]
+                coordinates: location.coordinates || [location.lat, location.lng]
             }));
 
             console.log(`Loaded ${this.locationData.length} location markers`);
@@ -376,11 +392,23 @@ export class InteractiveMap {
                 ${location.status ? `<p class="map-popup__status"><strong>Status:</strong> <span class="status-badge status-badge--${location.status}">${location.status}</span></p>` : ''}
                 ${location.date ? `<p class="map-popup__date"><strong>Date:</strong> ${DateUtils.format(location.date, 'long')}</p>` : ''}
                 <div class="map-popup__coordinates">
-                    <strong>Coordinates:</strong> ${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}
+                    <strong>Coordinates:</strong> 
+                    ${location.lat && location.lng 
+                        ? `${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`
+                        : location.coordinates 
+                            ? `${location.coordinates[0].toFixed(4)}, ${location.coordinates[1].toFixed(4)}`
+                            : 'Coordinates not available'
+                    }
                 </div>
             </div>
             <div class="map-popup__actions">
-                <button class="map-popup__btn" onclick="navigator.clipboard.writeText('${location.lat}, ${location.lng}')">
+                <button class="map-popup__btn" onclick="navigator.clipboard.writeText('${
+                    location.lat && location.lng 
+                        ? `${location.lat}, ${location.lng}`
+                        : location.coordinates 
+                            ? `${location.coordinates[0]}, ${location.coordinates[1]}`
+                            : ''
+                }')">>
                     Copy Coordinates
                 </button>
                 ${location.sources ? `

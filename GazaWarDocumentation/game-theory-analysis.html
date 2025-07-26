@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Theory Analysis: Strategic Incentives in the Gaza Conflict</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/game-theory.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- MathJax for mathematical equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <h1><a href="index.html">Gaza War Documentation</a></h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#analysis">Game Theory</a></li>
+                <li><a href="#models">Strategic Models</a></li>
+                <li><a href="#payoffs">Payoff Analysis</a></li>
+                <li><a href="#equilibrium">Nash Equilibrium</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Game Theory Analysis of Gaza Conflict</h1>
+                <p class="hero-subtitle">Strategic Incentives and Rational Actor Models</p>
+                <p class="disclaimer">Academic analysis of strategic decision-making in international conflict</p>
+            </div>
+        </section>
+
+        <section id="analysis" class="analysis-section">
+            <div class="container">
+                <h2>Strategic Actor Analysis</h2>
+                
+                <div class="actors-grid">
+                    <div class="actor-card">
+                        <h3>Netanyahu (Israel)</h3>
+                        <div class="incentives">
+                            <h4>Political Incentives</h4>
+                            <ul>
+                                <li><strong>Domestic Coalition Stability</strong>: Maintaining right-wing coalition government</li>
+                                <li><strong>Legal Immunity</strong>: Avoiding corruption trial consequences</li>
+                                <li><strong>Security Narrative</strong>: Positioning as protector of Israeli security</li>
+                                <li><strong>Electoral Timing</strong>: Delaying elections during wartime</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="actor-card">
+                        <h3>Trump/US Partnership</h3>
+                        <div class="incentives">
+                            <h4>Strategic Incentives</h4>
+                            <ul>
+                                <li><strong>Electoral Base</strong>: Evangelical and pro-Israel voter support</li>
+                                <li><strong>Geopolitical Influence</strong>: Middle East strategic positioning</li>
+                                <li><strong>Arms Industry</strong>: Defense contractor economic benefits</li>
+                                <li><strong>Regional Alliances</strong>: Strengthening anti-Iran coalition</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="models" class="models-section">
+            <div class="container">
+                <h2>Game Theory Models</h2>
+
+                <div class="model-container">
+                    <h3>1. Multi-Player Strategic Form Game</h3>
+                    <div class="equation-block">
+                        <p><strong>Players:</strong> $P = \{Netanyahu, Trump/US, Palestinians, Hamas, Iran, EU, Canada, UAE, China, Russia, Ukraine, News\ Media\}$</p>
+                        <p><strong>Strategy Sets:</strong></p>
+                        <p>$S_N = \{Escalate, De-escalate, Status\ Quo\}$ (Netanyahu)</p>
+                        <p>$S_{US} = \{Full\ Support, Conditional\ Support, Pressure\ for\ Peace\}$ (Trump/US)</p>
+                        <p>$S_P = \{Peaceful\ Resistance, Armed\ Resistance, Diplomatic\ Engagement\}$ (Palestinians)</p>
+                        <p>$S_H = \{Military\ Action, Ceasefire, Political\ Negotiation\}$ (Hamas)</p>
+                        <p>$S_I = \{Direct\ Support, Proxy\ Support, Strategic\ Restraint\}$ (Iran)</p>
+                        <p>$S_{EU} = \{Sanctions, Diplomatic\ Pressure, Humanitarian\ Aid\}$ (European Union)</p>
+                        <p>$S_C = \{Mediation, Conditional\ Support, Humanitarian\ Focus\}$ (Canada)</p>
+                        <p>$S_{UAE} = \{Abraham\ Accords, Regional\ Stability, Economic\ Leverage\}$ (UAE)</p>
+                        <p>$S_{CH} = \{Economic\ Diplomacy, Non-interference, Regional\ Influence\}$ (China)</p>
+                        <p>$S_R = \{Anti-West\ Alliance, Regional\ Power, Energy\ Leverage\}$ (Russia)</p>
+                        <p>$S_U = \{Solidarity\ Narrative, Resource\ Competition, Western\ Alliance\}$ (Ukraine)</p>
+                        <p>$S_M = \{Balanced\ Coverage, Pro-Israel\ Bias, Pro-Palestinian\ Bias\}$ (News Media)</p>
+                    </div>
+
+                    <div class="payoff-matrix">
+                        <h4>Core Players Payoff Matrix (Netanyahu × Trump/US)</h4>
+                        <table class="game-matrix">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th colspan="3">Trump/US Strategy</th>
+                                </tr>
+                                <tr>
+                                    <th>Netanyahu Strategy</th>
+                                    <th>Full Support</th>
+                                    <th>Conditional Support</th>
+                                    <th>Pressure for Peace</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Escalate</strong></td>
+                                    <td>(8, 6)</td>
+                                    <td>(5, 4)</td>
+                                    <td>(2, 2)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>De-escalate</strong></td>
+                                    <td>(4, 5)</td>
+                                    <td>(6, 7)</td>
+                                    <td>(7, 8)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Status Quo</strong></td>
+                                    <td>(6, 7)</td>
+                                    <td>(7, 6)</td>
+                                    <td>(5, 5)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="matrix-note">Payoffs: (Netanyahu, Trump/US) on scale 1-10</p>
+                        
+                        <h4>Multi-Player Strategic Interactions</h4>
+                        <div class="multi-player-analysis">
+                            <table class="multi-player-matrix">
+                                <thead>
+                                    <tr>
+                                        <th>Player</th>
+                                        <th>Primary Strategy</th>
+                                        <th>Escalation Payoff</th>
+                                        <th>Status Quo Payoff</th>
+                                        <th>Peace Payoff</th>
+                                        <th>Key Dependencies</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Palestinians (Civilian)</strong></td>
+                                        <td>Diplomatic Engagement</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                        <td>9</td>
+                                        <td>International Support, Statehood Recognition</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hamas</strong></td>
+                                        <td>Military Action</td>
+                                        <td>7</td>
+                                        <td>6</td>
+                                        <td>3</td>
+                                        <td>Iran Support, Popular Legitimacy</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Iran</strong></td>
+                                        <td>Proxy Support</td>
+                                        <td>8</td>
+                                        <td>7</td>
+                                        <td>4</td>
+                                        <td>Regional Hegemony, Nuclear Program</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>European Union</strong></td>
+                                        <td>Diplomatic Pressure</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>8</td>
+                                        <td>US Relations, Refugee Crisis</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Canada</strong></td>
+                                        <td>Humanitarian Focus</td>
+                                        <td>4</td>
+                                        <td>6</td>
+                                        <td>8</td>
+                                        <td>US Relations, Domestic Politics</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UAE</strong></td>
+                                        <td>Regional Stability</td>
+                                        <td>5</td>
+                                        <td>8</td>
+                                        <td>7</td>
+                                        <td>Abraham Accords, Iran Threat</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>China</strong></td>
+                                        <td>Economic Diplomacy</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>6</td>
+                                        <td>US Competition, BRI Interests</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Russia</strong></td>
+                                        <td>Anti-West Alliance</td>
+                                        <td>7</td>
+                                        <td>6</td>
+                                        <td>4</td>
+                                        <td>Ukraine War, Iran Partnership</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ukraine</strong></td>
+                                        <td>Western Alliance</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>US Support, Resource Competition</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>News Media</strong></td>
+                                        <td>Balanced Coverage</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>Audience, Political Pressure, Access</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-container">
+                    <h3>2. Multi-Player Dynamic Game with Incomplete Information</h3>
+                    <div class="equation-block">
+                        <p><strong>Core Player Utility Functions:</strong></p>
+                        
+                        <p><strong>Netanyahu's Utility:</strong></p>
+                        $$U_N(s_N, s_{-N}, \theta) = \alpha \cdot Political\_Survival(s_N, s_{US}) + \beta \cdot Security\_Narrative(s_N) + \gamma \cdot Coalition\_Stability(s_N, \theta) + \delta \cdot International\_Isolation(s_{EU}, s_C)$$
+                        
+                        <p><strong>Trump/US Utility:</strong></p>
+                        $$U_{US}(s_{US}, s_{-US}, \phi) = \delta \cdot Electoral\_Benefits(s_{US}) + \epsilon \cdot Geopolitical\_Influence(s_{US}, s_I, s_R) + \zeta \cdot Economic\_Returns(s_{US}, \phi) + \eta \cdot Alliance\_Cohesion(s_{EU}, s_C)$$
+                        
+                        <p><strong>Palestinian Civilian Utility:</strong></p>
+                        $$U_P(s_P, s_{-P}, \psi) = \lambda \cdot Human\_Security(s_N, s_H) + \mu \cdot International\_Recognition(s_{EU}, s_C, s_{US}) + \nu \cdot Economic\_Development(s_{UAE}, s_{CH})$$
+                        
+                        <p><strong>Hamas Utility:</strong></p>
+                        $$U_H(s_H, s_{-H}, \omega) = \rho \cdot Legitimacy\_Control(s_H, s_P) + \sigma \cdot Military\_Capability(s_I) + \tau \cdot Popular\_Support(s_P, s_N)$$
+                        
+                        <p><strong>Iran Utility:</strong></p>
+                        $$U_I(s_I, s_{-I}, \xi) = \chi \cdot Regional\_Hegemony(s_I, s_{UAE}, s_{US}) + \psi \cdot Nuclear\_Leverage(s_{US}, s_{EU}) + \omega \cdot Proxy\_Network(s_H, s_R)$$
+                    </div>
+
+                    <div class="equation-block">
+                        <p><strong>Secondary Player Utilities:</strong></p>
+                        
+                        <p><strong>European Union:</strong></p>
+                        $$U_{EU}(s_{EU}, s_{-EU}) = \alpha_{EU} \cdot Humanitarian\_Goals + \beta_{EU} \cdot US\_Relations + \gamma_{EU} \cdot Refugee\_Management$$
+                        
+                        <p><strong>Canada:</strong></p>
+                        $$U_C(s_C, s_{-C}) = \alpha_C \cdot Moral\_Leadership + \beta_C \cdot US\_Relations + \gamma_C \cdot Domestic\_Politics$$
+                        
+                        <p><strong>UAE:</strong></p>
+                        $$U_{UAE}(s_{UAE}, s_{-UAE}) = \alpha_{UAE} \cdot Abraham\_Accords + \beta_{UAE} \cdot Iran\_Containment + \gamma_{UAE} \cdot Economic\_Stability$$
+                        
+                        <p><strong>China:</strong></p>
+                        $$U_{CH}(s_{CH}, s_{-CH}) = \alpha_{CH} \cdot US\_Competition + \beta_{CH} \cdot BRI\_Expansion + \gamma_{CH} \cdot Energy\_Access$$
+                        
+                        <p><strong>Russia:</strong></p>
+                        $$U_R(s_R, s_{-R}) = \alpha_R \cdot Anti\_West\_Coalition + \beta_R \cdot Iran\_Partnership + \gamma_R \cdot Ukraine\_Distraction$$
+                        
+                        <p><strong>Ukraine:</strong></p>
+                        $$U_U(s_U, s_{-U}) = \alpha_U \cdot US\_Support\_Retention + \beta_U \cdot Resource\_Competition + \gamma_U \cdot Solidarity\_Narrative$$
+                        
+                        <p><strong>News Media:</strong></p>
+                        $$U_M(s_M, s_{-M}) = \alpha_M \cdot Audience\_Engagement + \beta_M \cdot Political\_Access + \gamma_M \cdot Credibility\_Maintenance$$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="payoffs" class="payoffs-section">
+            <div class="container">
+                <h2>Multi-Player Strategic Analysis</h2>
+
+                <div class="multi-player-overview">
+                    <h3>Coalition Structure and Strategic Alliances</h3>
+                    <div class="coalitions-grid">
+                        <div class="coalition-card pro-israel">
+                            <h4>Pro-Israel Coalition</h4>
+                            <ul>
+                                <li><strong>Trump/US</strong> - Electoral and strategic benefits</li>
+                                <li><strong>UAE</strong> - Abraham Accords, Iran containment</li>
+                                <li><strong>Parts of News Media</strong> - Access and political alignment</li>
+                            </ul>
+                            <div class="coalition-incentive">
+                                <strong>Shared Interest:</strong> Regional stability, Iran containment, economic partnerships
+                            </div>
+                        </div>
+
+                        <div class="coalition-card pro-palestinian">
+                            <h4>Pro-Palestinian Coalition</h4>
+                            <ul>
+                                <li><strong>Palestinians (Civilian)</strong> - Statehood and rights</li>
+                                <li><strong>Parts of EU</strong> - Humanitarian concerns</li>
+                                <li><strong>Canada</strong> - Human rights leadership</li>
+                                <li><strong>Progressive News Media</strong> - Social justice narrative</li>
+                            </ul>
+                            <div class="coalition-incentive">
+                                <strong>Shared Interest:</strong> Human rights, international law, humanitarian protection
+                            </div>
+                        </div>
+
+                        <div class="coalition-card resistance-axis">
+                            <h4>Resistance Axis</h4>
+                            <ul>
+                                <li><strong>Hamas</strong> - Military resistance, legitimacy</li>
+                                <li><strong>Iran</strong> - Regional hegemony, proxy warfare</li>
+                                <li><strong>Russia</strong> - Anti-Western alliance, distraction</li>
+                            </ul>
+                            <div class="coalition-incentive">
+                                <strong>Shared Interest:</strong> Challenging US hegemony, weakening Western influence
+                            </div>
+                        </div>
+
+                        <div class="coalition-card opportunistic">
+                            <h4>Opportunistic Players</h4>
+                            <ul>
+                                <li><strong>China</strong> - Economic opportunities, US competition</li>
+                                <li><strong>Ukraine</strong> - Resource competition management</li>
+                                <li><strong>Mainstream News Media</strong> - Audience engagement, access</li>
+                            </ul>
+                            <div class="coalition-incentive">
+                                <strong>Shared Interest:</strong> Maximizing individual gains regardless of conflict outcome
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailed-player-analysis">
+                    <h3>Individual Player Strategic Analysis</h3>
+                    
+                    <div class="player-analysis-grid">
+                        <div class="player-card">
+                            <h4>Palestinians (Civilian Population)</h4>
+                            <div class="strategic-position">
+                                <p><strong>Optimal Strategy:</strong> Diplomatic Engagement + International Law Appeals</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Peace:</strong></p>
+                                    <ul>
+                                        <li>Statehood recognition: High utility (9/10)</li>
+                                        <li>Economic development: Medium-high (7/10)</li>
+                                        <li>Security and rights: High (8/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Conflict:</strong></p>
+                                    <ul>
+                                        <li>Humanitarian suffering: Very high (-9/10)</li>
+                                        <li>International sympathy vs. actual change: Low conversion</li>
+                                        <li>Hamas representation problem: Medium cost (-5/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> Limited direct agency, Hamas representation, international dependency</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player-card">
+                            <h4>Hamas</h4>
+                            <div class="strategic-position">
+                                <p><strong>Optimal Strategy:</strong> Military Action + Political Negotiation</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Conflict:</strong></p>
+                                    <ul>
+                                        <li>Legitimacy as resistance leader: High (8/10)</li>
+                                        <li>Iran support and resources: High (7/10)</li>
+                                        <li>Popular support through resistance: Medium (6/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Peace:</strong></p>
+                                    <ul>
+                                        <li>Loss of raison d'être: High (-7/10)</li>
+                                        <li>Competition with Palestinian Authority: Medium (-5/10)</li>
+                                        <li>Reduced Iranian support: Medium (-6/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> Iran dependency, legitimacy tied to resistance, governance expectations</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player-card">
+                            <h4>Iran</h4>
+                            <div class="strategic-position">
+                                <p><strong>Optimal Strategy:</strong> Proxy Support + Regional Hegemony</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Conflict:</strong></p>
+                                    <ul>
+                                        <li>Regional influence expansion: High (8/10)</li>
+                                        <li>US-Israel resource drain: High (7/10)</li>
+                                        <li>Proxy network strengthening: Medium-high (7/10)</li>
+                                        <li>Nuclear negotiations leverage: Medium (6/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Escalation:</strong></p>
+                                    <ul>
+                                        <li>Direct confrontation risk: High (-8/10)</li>
+                                        <li>Economic sanctions: Medium (-5/10)</li>
+                                        <li>Arab state alienation: Medium (-4/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> Nuclear program timeline, economic sanctions, proxy control limits</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player-card">
+                            <h4>European Union</h4>
+                            <div class="strategic-position">
+                                <p><strong>Optimal Strategy:</strong> Diplomatic Pressure + Humanitarian Aid</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Peace Advocacy:</strong></p>
+                                    <ul>
+                                        <li>Moral leadership internationally: High (8/10)</li>
+                                        <li>Refugee crisis management: High (7/10)</li>
+                                        <li>International law reinforcement: Medium-high (7/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Strong Action:</strong></p>
+                                    <ul>
+                                        <li>US relationship strain: High (-7/10)</li>
+                                        <li>Internal divisions exposure: Medium (-5/10)</li>
+                                        <li>Economic consequences: Low (-3/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> US alliance importance, internal consensus requirements, limited enforcement power</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player-card">
+                            <h4>China</h4>
+                            <div class="strategic-position">
+                                <p><strong>Optimal Strategy:</strong> Economic Diplomacy + Strategic Non-interference</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Neutrality:</strong></p>
+                                    <ul>
+                                        <li>Economic opportunities both sides: High (8/10)</li>
+                                        <li>US distraction/resource drain: Medium-high (7/10)</li>
+                                        <li>Belt and Road expansion: Medium (6/10)</li>
+                                        <li>Global South leadership: Medium-high (7/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Involvement:</strong></p>
+                                    <ul>
+                                        <li>US confrontation escalation: High (-8/10)</li>
+                                        <li>Middle East entanglement: Medium (-5/10)</li>
+                                        <li>Economic disruption: Low (-3/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> US competition priority, Taiwan focus, economic interdependence</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player-card">
+                            <h4>Russia</h4>
+                            <div class="strategic-position">
+                                <p><strong>Optimal Strategy:</strong> Anti-West Alliance + Iran Partnership</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Conflict:</strong></p>
+                                    <ul>
+                                        <li>US resource/attention diversion: High (8/10)</li>
+                                        <li>Anti-Western coalition building: High (7/10)</li>
+                                        <li>Iran strategic partnership: Medium-high (7/10)</li>
+                                        <li>Ukraine support reduction: Medium (6/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Escalation:</strong></p>
+                                    <ul>
+                                        <li>Further Western sanctions: Medium (-5/10)</li>
+                                        <li>Middle East overextension: Low (-3/10)</li>
+                                        <li>Energy market disruption: Low (-2/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> Ukraine war priority, economic limitations, nuclear considerations</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player-card">
+                            <h4>News Media</h4>
+                            <div class="strategic-position">
+                                <p><strong>Strategy Varies by Outlet:</strong> Balanced Coverage / Partisan Alignment</p>
+                                <div class="payoff-breakdown">
+                                    <p><strong>Gains from Conflict Coverage:</strong></p>
+                                    <ul>
+                                        <li>Audience engagement: High (8/10)</li>
+                                        <li>Political access maintenance: Variable (3-8/10)</li>
+                                        <li>Credibility through "objectivity": Medium (6/10)</li>
+                                        <li>Revenue from attention: High (7/10)</li>
+                                    </ul>
+                                    <p><strong>Costs of Bias:</strong></p>
+                                    <ul>
+                                        <li>Credibility loss: Variable (-2 to -8/10)</li>
+                                        <li>Audience fragmentation: Medium (-4/10)</li>
+                                        <li>Access reduction: Variable (-3 to -7/10)</li>
+                                    </ul>
+                                </div>
+                                <div class="strategic-constraints">
+                                    <p><strong>Key Constraints:</strong> Ownership pressures, audience expectations, access dependencies, advertiser concerns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equilibrium" class="equilibrium-section">
+            <div class="container">
+                <h2>Multi-Player Nash Equilibrium Analysis</h2>
+
+                <div class="equilibrium-analysis">
+                    <h3>Multi-Player Perfect Bayesian Equilibrium</h3>
+                    <div class="equation-block">
+                        <p><strong>Equilibrium Condition for n-Player Game:</strong></p>
+                        $$\forall i \in P: \max_{s_i} U_i(s_i, s_{-i}^*, \theta_i) \quad \text{where } s_{-i}^* \text{ are equilibrium strategies of all other players}$$
+                        
+                        <p><strong>Coalition Stability Condition:</strong></p>
+                        $$\forall C \subseteq P: \sum_{i \in C} U_i(s_C', s_{-C}^*) \leq \sum_{i \in C} U_i(s_C^*, s_{-C}^*)$$
+                        
+                        <p><strong>Information Structure:</strong></p>
+                        $$I_i = \{H_i, \Theta_{-i}, S_{observable}\} \quad \text{where } H_i \text{ is player i's history}$$
+                    </div>
+
+                    <div class="multi-equilibrium-result">
+                        <h4>Predicted Multi-Player Equilibrium Strategy Profile</h4>
+                        <div class="equilibrium-strategies">
+                            <table class="equilibrium-table">
+                                <thead>
+                                    <tr>
+                                        <th>Player</th>
+                                        <th>Equilibrium Strategy</th>
+                                        <th>Utility Score</th>
+                                        <th>Stability Coefficient</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="core-player">
+                                        <td><strong>Netanyahu</strong></td>
+                                        <td>Status Quo (Controlled Escalation)</td>
+                                        <td>7.2</td>
+                                        <td>0.85</td>
+                                    </tr>
+                                    <tr class="core-player">
+                                        <td><strong>Trump/US</strong></td>
+                                        <td>Full Support (with conditions)</td>
+                                        <td>6.8</td>
+                                        <td>0.82</td>
+                                    </tr>
+                                    <tr class="coalition-resist">
+                                        <td><strong>Palestinians</strong></td>
+                                        <td>Diplomatic Engagement + Resistance</td>
+                                        <td>3.5</td>
+                                        <td>0.45</td>
+                                    </tr>
+                                    <tr class="coalition-resist">
+                                        <td><strong>Hamas</strong></td>
+                                        <td>Military Action (Limited)</td>
+                                        <td>6.5</td>
+                                        <td>0.75</td>
+                                    </tr>
+                                    <tr class="coalition-resist">
+                                        <td><strong>Iran</strong></td>
+                                        <td>Proxy Support (Calibrated)</td>
+                                        <td>7.5</td>
+                                        <td>0.88</td>
+                                    </tr>
+                                    <tr class="coalition-moderate">
+                                        <td><strong>EU</strong></td>
+                                        <td>Diplomatic Pressure (Symbolic)</td>
+                                        <td>5.5</td>
+                                        <td>0.65</td>
+                                    </tr>
+                                    <tr class="coalition-moderate">
+                                        <td><strong>Canada</strong></td>
+                                        <td>Humanitarian Focus</td>
+                                        <td>6.2</td>
+                                        <td>0.70</td>
+                                    </tr>
+                                    <tr class="coalition-opportunist">
+                                        <td><strong>UAE</strong></td>
+                                        <td>Regional Stability</td>
+                                        <td>7.8</td>
+                                        <td>0.92</td>
+                                    </tr>
+                                    <tr class="coalition-opportunist">
+                                        <td><strong>China</strong></td>
+                                        <td>Economic Diplomacy</td>
+                                        <td>7.0</td>
+                                        <td>0.85</td>
+                                    </tr>
+                                    <tr class="coalition-resist">
+                                        <td><strong>Russia</strong></td>
+                                        <td>Anti-West Alliance</td>
+                                        <td>6.8</td>
+                                        <td>0.78</td>
+                                    </tr>
+                                    <tr class="coalition-moderate">
+                                        <td><strong>Ukraine</strong></td>
+                                        <td>Western Alliance (Cautious)</td>
+                                        <td>5.0</td>
+                                        <td>0.60</td>
+                                    </tr>
+                                    <tr class="coalition-opportunist">
+                                        <td><strong>News Media</strong></td>
+                                        <td>Balanced Coverage (Slight Pro-Israel)</td>
+                                        <td>6.5</td>
+                                        <td>0.75</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="equilibrium-explanation">
+                            <h5>Why This Multi-Player Equilibrium Persists:</h5>
+                            <div class="equilibrium-factors">
+                                <div class="factor-group">
+                                    <h6>Coalition Dynamics:</h6>
+                                    <ul>
+                                        <li><strong>Pro-Israel Coalition</strong> (US, UAE, News Media) provides stable support structure</li>
+                                        <li><strong>Resistance Axis</strong> (Hamas, Iran, Russia) benefits from prolonged conflict</li>
+                                        <li><strong>Moderate Coalition</strong> (EU, Canada) lacks enforcement power</li>
+                                        <li><strong>Opportunistic Players</strong> (China, UAE) maximize gains regardless of outcome</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="factor-group">
+                                    <h6>Information Asymmetries:</h6>
+                                    <ul>
+                                        <li>Private information about domestic constraints prevents coordination</li>
+                                        <li>Media filtering creates different information sets for different players</li>
+                                        <li>Intelligence sharing limited to alliance partners</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="factor-group">
+                                    <h6>Commitment Problems:</h6>
+                                    <ul>
+                                        <li>No credible third-party enforcement mechanism</li>
+                                        <li>Time-inconsistent preferences across electoral cycles</li>
+                                        <li>Coalition instability prevents long-term commitments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="coalition-analysis">
+                        <h3>Coalition Formation Analysis</h3>
+                        <div class="equation-block">
+                            <p><strong>Core Coalition Stability:</strong></p>
+                            $$Core(N, v) = \{x \in \mathbb{R}^n : \sum_{i \in N} x_i = v(N) \land \forall S \subseteq N, \sum_{i \in S} x_i \geq v(S)\}$$
+                            
+                            <p><strong>Shapley Value for Coalition Payoffs:</strong></p>
+                            $$\phi_i(N, v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(n-|S|-1)!}{n!}[v(S \cup \{i\}) - v(S)]$$
+                        </div>
+                        
+                        <div class="coalition-stability-results">
+                            <h4>Coalition Stability Rankings</h4>
+                            <ol>
+                                <li><strong>Iran-Hamas-Russia Axis</strong> - Stability Score: 0.89
+                                    <br><em>High complementarity, shared anti-Western interests</em></li>
+                                <li><strong>US-UAE-Netanyahu Triangle</strong> - Stability Score: 0.85
+                                    <br><em>Mutual economic and security benefits</em></li>
+                                <li><strong>EU-Canada-Palestine Rights Coalition</strong> - Stability Score: 0.45
+                                    <br><em>Shared values but limited enforcement power</em></li>
+                                <li><strong>China-Opportunistic Players</strong> - Stability Score: 0.70
+                                    <br><em>Flexible alignment based on advantages</em></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="mechanism-design">
+                        <h3>Mechanism Design for Peace</h3>
+                        <div class="equation-block">
+                            <p><strong>Incentive Compatible Peace Mechanism:</strong></p>
+                            $$IC: \forall i, \forall \theta_i, \theta_i' : U_i(g(\theta_i, \theta_{-i}), \theta_i) \geq U_i(g(\theta_i', \theta_{-i}), \theta_i)$$
+                            
+                            <p><strong>Individual Rationality Constraint:</strong></p>
+                            $$IR: \forall i, \forall \theta_i : U_i(g(\theta_i, \theta_{-i}), \theta_i) \geq U_i^{status\ quo}$$
+                            
+                            <p><strong>Budget Balance:</strong></p>
+                            $$BB: \sum_{i=1}^n t_i(\theta) \geq 0 \quad \text{where } t_i \text{ are transfer payments}$$
+                        </div>
+                        
+                        <div class="peace-mechanism-proposal">
+                            <h4>Proposed Multi-Lateral Peace Mechanism</h4>
+                            <div class="mechanism-components">
+                                <div class="mechanism-component">
+                                    <h5>Economic Incentives Package</h5>
+                                    <ul>
+                                        <li><strong>Netanyahu:</strong> EU reconstruction aid contingent on peace progress</li>
+                                        <li><strong>Palestinians:</strong> International recognition + development fund</li>
+                                        <li><strong>Iran:</strong> Sanctions relief phased with regional de-escalation</li>
+                                        <li><strong>US:</strong> Regional security architecture leadership role</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="mechanism-component">
+                                    <h5>Enforcement Structure</h5>
+                                    <ul>
+                                        <li><strong>Monitoring:</strong> AI-powered compliance verification</li>
+                                        <li><strong>Punishment:</strong> Graduated sanctions with coalition enforcement</li>
+                                        <li><strong>Rewards:</strong> Progressive benefits tied to milestone achievement</li>
+                                        <li><strong>Arbitration:</strong> International court with binding decisions</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="mechanism-component">
+                                    <h5>Information Revelation</h5>
+                                    <ul>
+                                        <li><strong>Transparency Requirements:</strong> Regular conflict-related data disclosure</li>
+                                        <li><strong>Third-Party Verification:</strong> Independent monitoring bodies</li>
+                                        <li><strong>Media Access:</strong> Guaranteed journalist protection and access</li>
+                                        <li><strong>Public Reporting:</strong> Standardized humanitarian and military metrics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="implications" class="implications-section">
+            <div class="container">
+                <h2>Policy Implications</h2>
+
+                <div class="implications-grid">
+                    <div class="implication-card">
+                        <h3>Incentive Misalignment</h3>
+                        <p>Current incentive structures reward conflict continuation over peace-seeking behavior</p>
+                        <div class="equation-block">
+                            $$Incentive_{Peace} < Incentive_{Conflict}$$
+                        </div>
+                    </div>
+
+                    <div class="implication-card">
+                        <h3>Structural Solutions</h3>
+                        <p>Breaking the equilibrium requires changing the payoff structure:</p>
+                        <ul>
+                            <li>International accountability mechanisms</li>
+                            <li>Conditional aid structures</li>
+                            <li>Electoral reform incentives</li>
+                            <li>Third-party enforcement</li>
+                        </ul>
+                    </div>
+
+                    <div class="implication-card">
+                        <h3>Time Inconsistency Problem</h3>
+                        <div class="equation-block">
+                            $$U_{t=0}(Peace) > U_{t=0}(War)$$
+                            $$U_{t=election}(War) > U_{t=election}(Peace)$$
+                        </div>
+                        <p>Short-term political incentives override long-term social welfare</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sources" class="sources-section">
+            <div class="container">
+                <h2>Academic Sources & Methodology</h2>
+                
+                <div class="methodology">
+                    <h3>Game Theory Framework</h3>
+                    <ul>
+                        <li>Osborne, M. J. (2004). "An Introduction to Game Theory"</li>
+                        <li>Fudenberg, D. & Tirole, J. (1991). "Game Theory"</li>
+                        <li>Myerson, R. B. (1991). "Game Theory: Analysis of Conflict"</li>
+                    </ul>
+                </div>
+
+                <div class="data-sources">
+                    <h3>Empirical Data Sources</h3>
+                    <ul>
+                        <li>Israeli Central Bureau of Statistics</li>
+                        <li>Gallup International polling data</li>
+                        <li>Congressional Budget Office reports</li>
+                        <li>Stockholm International Peace Research Institute (SIPRI)</li>
+                    </ul>
+                </div>
+
+                <div class="disclaimers">
+                    <h3>Academic Disclaimers</h3>
+                    <p><strong>This analysis is purely academic and theoretical.</strong> Game theory models are simplifications of complex real-world situations and should not be used as sole basis for policy decisions. The payoff values are illustrative and based on available public data and academic literature.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Gaza War Documentation Project. Academic Research Purpose.</p>
+            <p>Game theory analysis for educational and research purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="src/modules/game-theory.js" type="module"></script>
+</body>
+</html>

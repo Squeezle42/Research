@@ -290,7 +290,9 @@ export class SatelliteImagery {
     generateMockImageUrl(location, date, index) {
         const width = 800;
         const height = 600;
-        const text = `${location}-${DateUtils.format(date, 'iso')}`;
+        // Use a simple date format to avoid issues
+        const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD format
+        const text = `${location}_${dateStr}`;
         const bgColor = ['e3f2fd', 'f3e5f5', 'e8f5e8', 'fff3e0'][index % 4];
         const textColor = ['1976d2', '7b1fa2', '388e3c', 'f57c00'][index % 4];
         
@@ -303,7 +305,8 @@ export class SatelliteImagery {
     generateMockThumbnailUrl(location, date, index) {
         const width = 200;
         const height = 150;
-        const text = DateUtils.format(date, 'short');
+        const dateStr = date.toISOString().split('T')[0];
+        const text = dateStr;
         const bgColor = ['e3f2fd', 'f3e5f5', 'e8f5e8', 'fff3e0'][index % 4];
         
         return `https://via.placeholder.com/${width}x${height}/${bgColor}/666?text=${encodeURIComponent(text)}`;
