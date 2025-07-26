@@ -1,3 +1,4 @@
+
 # Gaza War Documentation Website
 
 ## Project Overview
